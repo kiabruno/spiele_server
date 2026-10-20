@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unsere Games | Gaming Community</title>
+    <link rel="icon" href="tab.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #8b0000;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header img {
+            width: 150px;
+            max-width: 80%;
+            height: auto;
+        }
+
+        nav {
+            background: #350000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #c40000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .game-card {
+            background: #350000;
+            border: 2px solid #ff4545;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 5px 15px #40000055;
+        }
+
+        .game-card h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #ffb3b3;
+        }
+
+        .game-info {
+            background: #520000;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .yes {
+            background: #176b35;
+            color: white;
+        }
+
+        .no {
+            background: #8b2222;
+            color: white;
+        }
+
+        .count {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffb3b3;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #ffdada;
+            margin-top: 15px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            background: #350000;
+        }
+
+        @media (max-width: 500px) {
+            nav a {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.png" alt="Gaming Community Logo">
+    </header>
+
+    <nav>
+        <a href="index.html">Start</a>
+        <a href="link.html">Links</a>
+        <a href="spiele.html">Spiele</a>
+    </nav>
+
+    <main class="container">
+
+        <h1>🎮 Unsere Games</h1>
+
+        <p class="intro">
+            Hier findest du unsere Spiele, die Anzahl der Spieler
+            mit der jeweiligen Rolle und ob das Spiel auf unserem
+            Discord verfügbar ist.
+        </p>
+
+        <div class="games">
+
+            <!--LS-->
+            <section class="game-card">
+                <h2>🚜 Farming Simulator</h2>
+
+                <div class="game-info">
+                    <strong>Spieler mit der Rolle:</strong><br>
+
+                    <span class="count">0</span> Spieler
+                </div>
+
+                <div class="game-info">
+                    <strong>Auf Discord verfügbar:</strong><br>
+
+                    <span class="status yes">Nein</span>
+                </div>
+            </section>
+
+          <!--MC-->
+            <section class="game-card">
+                <h2>⛏️ Minecraft</h2>
+
+                <div class="game-info">
+                    <strong>Spieler mit der Rolle:</strong><br>
+
+                    <span class="count">0</span> Spieler
+                </div>
+
+                <div class="game-info">
+                    <strong>Auf Discord verfügbar:</strong><br>
+
+                    <span class="status no">Nein</span>
+                </div>
+
+                <p class="note">
+                    Spielerzahl wird manuell aktualisiert.
+                </p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Gaming Community | Gemeinsam spielen, gemeinsam Spaß haben.
+    </footer>
+
+</body>
+</html>
