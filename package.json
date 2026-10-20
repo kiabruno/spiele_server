@@ -1,12 +1,13 @@
 {
-  "name": "mein-projekt",
+  "name": "spiele_server",
   "version": "1.0.0",
-  "description": "Mein Node.js-Projekt",
-  "main": "index.js",
+  "private": true,
+  "description": "Spiele Server",
   "scripts": {
-    "start": "node index.js"
+    "start": "npx serve . -l $PORT"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "@supabase/supabase-js": "^2.49.1",
+    "serve": "^14.2.4"
   }
 }
