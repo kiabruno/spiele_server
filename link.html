@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Unsere Links</title>
+  <link rel="icon" type="image/png" href="tab.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(140deg, #300000, #a00000, #4a0000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 35px 18px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 18px #ff3333);
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: #ffd6d6;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .link {
+      display: block;
+      text-decoration: none;
+      color: white;
+      background: rgba(35, 0, 0, 0.75);
+      border: 1px solid #ff5555;
+      border-radius: 12px;
+      padding: 19px;
+      margin: 15px 0;
+      font-size: 17px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .link:hover {
+      background: #d00000;
+      transform: translateY(-4px);
+      box-shadow: 0 5px 20px #ff000044;
+    }
+
+    .emoji {
+      margin-right: 10px;
+      font-size: 21px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #eababa;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <img src="logo.png" alt="Unser Logo" class="logo">
+
+    <h1>Unsere Links</h1>
+
+    <p class="description">
+      Willkommen bei unserer Gaming-Community!<br>
+      Hier findest du alle wichtigen Links.
+    </p>
+
+    <!-- Discord-Link hier einsetzen -->
+    <a class="link"
+       href="https://discord.gg/DEIN-CODE"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="emoji">🎮</span> Unser Discord
+    </a>
+
+    <!-- KiaBruno Twitch-Link einsetzen -->
+    <a class="link"
+       href="https://www.twitch.tv/KIABRUNO"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="emoji">🟣</span> Twitch – KiaBruno
+    </a>
+
+    <!-- Day Twitch-Link einsetzen -->
+    <a class="link"
+       href="https://www.twitch.tv/DEIN-DAY-KANAL"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="emoji">🟣</span> Twitch – Day
+    </a>
+
+    <footer>
+      Gemeinsam zocken. Gemeinsam Spaß haben. ❤️
+    </footer>
+
+  </main>
+</body>
+</html>
