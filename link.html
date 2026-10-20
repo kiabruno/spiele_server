@@ -52,19 +52,45 @@
       line-height: 1.6;
     }
 
+    /* NAVIGATIONSLEISTE */
+    nav {
+      background: #350000;
+      padding: 18px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-top: 1px solid #a52a2a;
+      border-bottom: 1px solid #a52a2a;
+    }
+
+    nav a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      margin: 5px 14px;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ff7777;
+    }
+
+    /* HAUPTBEREICH */
     .links {
       width: 90%;
       max-width: 600px;
       margin: auto;
-      padding: 35px 0 55px;
+      padding: 55px 0;
     }
 
     .links h2 {
-      font-size: 28px;
-      margin-bottom: 12px;
+      font-size: 30px;
+      margin-bottom: 14px;
     }
 
-    .links .intro {
+    .intro {
       color: #ffe5e5;
       margin-bottom: 28px;
       line-height: 1.7;
@@ -90,6 +116,7 @@
       box-shadow: 0 5px 18px #40000066;
     }
 
+
     footer {
       margin-top: auto;
       background: #350000;
@@ -98,24 +125,44 @@
       font-size: 14px;
       line-height: 1.7;
     }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 12px 5px;
+      }
+
+      nav a {
+        margin: 7px 8px;
+        font-size: 14px;
+      }
+
+      .links {
+        padding: 40px 0;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="logo.png" alt="Spiele Server Logo" class="logo">
+  <header id="start">
+    <img src="logo.png" alt="Spiele Server logo" class="logo">
 
     <h1>Unsere Links</h1>
 
-    <p>Alle wichtigen Links unserer Gaming Community auf einen Blick!</p>
+    <p>Hier findest du einige Links</p>
   </header>
 
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="link.html">Links</a>
+  </nav>
+
   <main class="links">
-    <h2>🔗 Unsere Socials</h2>
+    <h2>🔗 Unsere Link</h2>
 
     <p class="intro">
-      Folge uns und werde Teil unserer Community!
+      
     </p>
 
     <a class="link-button"
@@ -126,18 +173,25 @@
     </a>
 
     <a class="link-button"
-       href="https://www.twitch.tv/KIABRUNO"
+       href="https://www.twitch.tv/spieleserver"
+       target="_blank"
+       rel="noopener noreferrer">
+      🟣 Twitch
+    </a>
+
+    <a class="link-button"
+       href="https://www.twitch.tv/KiaBruno"
        target="_blank"
        rel="noopener noreferrer">
       🟣 Twitch – KiaBruno
     </a>
 
     <a class="link-button"
-       href="https://www.twitch.tv/DEIN-DAY-KANAL"
+       href="https://www.twitch.tv/joostlemkrt"
        target="_blank"
        rel="noopener noreferrer">
-      🟣 Twitch – Day
-    </a>
+      🟣 Twitch – dabavylon
+
   </main>
 
   <footer>
