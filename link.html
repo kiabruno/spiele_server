@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Unsere Links</title>
-  <link rel="icon" type="image/png" href="tab.png">
+  <title>Spiele Server | Links</title>
+  <link rel="icon" type="image/png" href="logo.png">
 
   <style>
     * {
@@ -15,115 +15,134 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
       font-family: Arial, sans-serif;
+      background: #8b0000;
       color: white;
-      background: linear-gradient(140deg, #300000, #a00000, #4a0000);
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 35px 18px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 480px;
+      flex-direction: column;
       text-align: center;
     }
 
-    .logo {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 18px #ff3333);
+    header {
+      padding: 40px 20px 25px;
+      background: linear-gradient(#3d0000, #8b0000);
     }
 
-    h1 {
-      font-size: 34px;
+    .logo {
+      width: 160px;
+      max-width: 65%;
+      height: auto;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 0 15px #ff3333);
+    }
+
+    header h1 {
+      font-size: clamp(28px, 5vw, 42px);
       margin-bottom: 12px;
     }
 
-    .description {
-      color: #ffd6d6;
-      margin-bottom: 30px;
+    header p {
+      color: #ffdada;
       line-height: 1.6;
     }
 
-    .link {
+    .links {
+      width: 90%;
+      max-width: 600px;
+      margin: auto;
+      padding: 35px 0 55px;
+    }
+
+    .links h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .links .intro {
+      color: #ffe5e5;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .link-button {
       display: block;
-      text-decoration: none;
-      color: white;
-      background: rgba(35, 0, 0, 0.75);
+      padding: 20px;
+      margin: 16px 0;
+      background: #570000;
       border: 1px solid #ff5555;
       border-radius: 12px;
-      padding: 19px;
-      margin: 15px 0;
-      font-size: 17px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
       font-weight: bold;
       transition: 0.25s;
     }
 
-    .link:hover {
-      background: #d00000;
+    .link-button:hover {
+      background: #c00000;
       transform: translateY(-4px);
-      box-shadow: 0 5px 20px #ff000044;
-    }
-
-    .emoji {
-      margin-right: 10px;
-      font-size: 21px;
+      box-shadow: 0 5px 18px #40000066;
     }
 
     footer {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #eababa;
+      margin-top: auto;
+      background: #350000;
+      padding: 25px 15px;
+      color: #e6baba;
+      font-size: 14px;
+      line-height: 1.7;
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
 
-    <img src="logo.png" alt="Unser Logo" class="logo">
+  <header>
+    <img src="logo.png" alt="Spiele Server Logo" class="logo">
 
     <h1>Unsere Links</h1>
 
-    <p class="description">
-      Willkommen bei unserer Gaming-Community!<br>
-      Hier findest du alle wichtigen Links.
+    <p>Alle wichtigen Links unserer Gaming Community auf einen Blick!</p>
+  </header>
+
+  <main class="links">
+    <h2>🔗 Unsere Socials</h2>
+
+    <p class="intro">
+      Folge uns und werde Teil unserer Community!
     </p>
 
-    <!-- Discord-Link hier einsetzen -->
-    <a class="link"
+    <a class="link-button"
        href="https://discord.gg/DEIN-CODE"
        target="_blank"
        rel="noopener noreferrer">
-      <span class="emoji">🎮</span> Unser Discord
+      🎮 Unser Discord
     </a>
 
-    <!-- KiaBruno Twitch-Link einsetzen -->
-    <a class="link"
+    <a class="link-button"
        href="https://www.twitch.tv/KIABRUNO"
        target="_blank"
        rel="noopener noreferrer">
-      <span class="emoji">🟣</span> Twitch – KiaBruno
+      🟣 Twitch – KiaBruno
     </a>
 
-    <!-- Day Twitch-Link einsetzen -->
-    <a class="link"
+    <a class="link-button"
        href="https://www.twitch.tv/DEIN-DAY-KANAL"
        target="_blank"
        rel="noopener noreferrer">
-      <span class="emoji">🟣</span> Twitch – Day
+      🟣 Twitch – Day
     </a>
-
-    <footer>
-      Gemeinsam zocken. Gemeinsam Spaß haben. ❤️
-    </footer>
-
   </main>
+
+  <footer>
+    © 2026 Gaming Community | Gemeinsam spielen, gemeinsam Spaß haben.
+  </footer>
+
 </body>
 </html>
