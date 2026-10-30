@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spiele Server | Ränke</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #8b0000;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header img {
+    width: 150px;
+    max-width: 80%;
+}
+
+nav {
+    background: #350000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+    background: #c40000;
+}
+
+.container {
+    width: 96%;
+    max-width: 1500px;
+    margin: 35px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    color: #ffdada;
+    margin-bottom: 30px;
+}
+
+/* RANG-KARTEN */
+
+.rank-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.rank-card {
+    text-align: center;
+    padding: 22px 10px;
+    min-width: 0;
+    border-radius: 12px;
+    border: 2px solid #ff5555;
+    background: #520000;
+}
+
+.duration {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #ffdada;
+}
+
+.rank-card h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 19px;
+    margin: 0 0 18px;
+}
+
+.rank-logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* PREIS-ANZEIGE */
+
+.price {
+    display: block;
+    background: #8b0000;
+    border: 2px solid #ff5555;
+    color: white;
+    padding: 12px 7px;
+    border-radius: 9px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* KAUF-BUTTONS */
+
+.buy-button {
+    display: block;
+    background: #c40000;
+    color: white;
+    padding: 14px 5px;
+    border: 2px solid #ff5555;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.buy-button:hover {
+    background: #ed2222;
+    transform: translateY(-2px);
+}
+
+/* VERGLEICHSTABELLE */
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+    text-align: center;
+    background: #520000;
+}
+
+th, td {
+    padding: 20px 12px;
+}
+
+thead th {
+    background: #350000;
+    font-size: 20px;
+}
+
+tbody tr:nth-child(odd) {
+    background: #700000;
+}
+
+tbody tr:nth-child(even) {
+    background: #520000;
+}
+
+td:first-child {
+    text-align: left;
+    font-weight: bold;
+    background: #350000;
+    min-width: 170px;
+}
+
+/* PREFIX-FARBEN */
+
+.booster-text {
+    color: #fe00ff;
+    font-weight: normal;
+}
+
+.premium-text {
+    color: #ff7800;
+    font-weight: normal;
+}
+
+.premiumplus-text {
+    color: #ff7800;
+    font-weight: normal;
+}
+
+.vip-text,
+.vipplus-text{
+    color: #efff00;
+    font-weight: normal;
+}
+
+.freunde-text {
+    color: #ff0000;
+    font-weight: normal;
+}
+
+.mitglied-text {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.team-text {
+    color: #e91e63;
+    font-weight: normal;
+}
+
+/* INFO-FRAGEZEICHEN */
+
+.info {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 17px;
+    height: 17px;
+    margin-left: 4px;
+    background: #c40000;
+    border: 1px solid #ff7777;
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    cursor: help;
+    position: relative;
+    vertical-align: middle;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 145%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    background: #250000;
+    border: 1px solid #ff5555;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    z-index: 200;
+    box-shadow: 0 4px 12px #0008;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.info:hover .tooltip,
+.info:focus .tooltip,
+.info:focus-within .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* KAUF-HINWEISFENSTER */
+
+.notice-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.notice-overlay.show {
+    display: flex;
+}
+
+.notice-box {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    background: #350000;
+    border: 2px solid #ff5555;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 30px #0009;
+}
+
+.notice-box h3 {
+    margin-top: 0;
+    color: #ff7777;
+}
+
+.notice-box p {
+    line-height: 1.6;
+}
+
+.close-button {
+    background: #c40000;
+    color: white;
+    border: 1px solid #ff5555;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.close-button:hover {
+    background: #ed2222;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background: #350000;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .rank-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .rank-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* JA- UND NEIN-SYMBOLE */
+
+.status {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.status.no {
+    color: #ff3333;
+    border: 2px solid #ff3333;
+}
+
+.status.yes {
+    color: #00e676;
+    border: 2px solid #00e676;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" alt="Gaming Community Logo">
+</header>
+
+<main class="container">
+
+<h1>🏆 Unsere Ränge</h1>
+
+<p class="intro">
+    Entdecke unsere Ränge und ihre Vorteile!<br><br>Info:</br>Hier werden alle Ränke die es auf Spiele Server gibt angezeigt also auch ränke die du nicht bekommen kanst!<br></br>Momentarn sind die Mitglod, Booster, Freunde und Team logos nicht verfügbar solange sie nicht verfübar sind
+     wird das logo von Spiele Server Benutzt!
+</p>
+
+<div class="rank-cards">
+    
+    <!-- MITGLIED -->
+    <section class="rank-card">
+        <div class="duration">Lebenslang</div>
+        <h2>
+            <img src="logo.png" class="rank-logo" alt="Mitglid Logo">
+            Mitglid
+        </h2>
+        <div class="price">Standart</div>
+        <button class="buy-button" onclick="rankst()">
+            KAUFEN
+        </button>
+    </section>
+
+    <!-- BOOSTER -->
+    <section class="rank-card">
+        <div class="duration">So lange dein Boostest hält</div>
+        <h2>
+            <img src="logo.png" class="rank-logo" alt="Booster Logo">
+            Booster
+        </h2>
+        <div class="price">Spiele-Server 1 Mal boosten</div>
+        <button class="buy-button" onclick="showNotice(1)">
+            KAUFEN
+        </button>
+    </section>
+
+    <!-- PREMIUM -->
+    <section class="rank-card">
+        <div class="duration">So lange dein Boostest hält</div>
+        <h2>
+            <img src="premium.png" class="rank-logo" alt="Premium Logo">
+            Premium
+        </h2>
+        <div class="price">Spiele-Server 1 Mal boosten</div>
+        <button class="buy-button" onclick="showNotice(1)">
+            KAUFEN
+        </button>
+    </section>
+
+    <!-- PREMIUM PLUS -->
+    <section class="rank-card">
+        <div class="duration">So lange dein Boostest hält</div>
+        <h2>
+            <img src="premium+.png" class="rank-logo" alt="Premium Plus Logo">
+            Premium+
+        </h2>
+        <div class="price">Spiele-Server 2 Mal boosten</div>
+        <button class="buy-button" onclick="showNotice(5)">
+            KAUFEN
+        </button>
+    </section>
+
+    <!-- VIP -->
+    <section class="rank-card">
+        <div class="duration">Lebenslang</div>
+        <h2>
+            <img src="vip.png" class="rank-logo" alt="VIP Logo">
+            VIP
+        </h2>
+        <div class="price">Nicht kaufbar</div>
+        <button class="buy-button" onclick="rankWarning()">
+            KAUFEN
+        </button>
+    </section>
+
+    <!-- VIP PLUS -->
+    <section class="rank-card">
+        <div class="duration">Lebenslang</div>
+        <h2>
+            <img src="vip+.png" class="rank-logo" alt="VIP Plus Logo">
+            VIP+
+        </h2>
+        <div class="price">Nicht kaufbar</div>
+        <button class="buy-button" onclick="rankWarning()">
+            KAUFEN
+        </button>
+    </section>
+
+    <!-- FREUNDE -->
+    <section class="rank-card">
+        <div class="duration">Lebenslang</div>
+        <h2>
+            <img src="logo.png" class="rank-logo" alt="Freunde Logo">
+            Freunde
+        </h2>
+        <div class="price">Nicht kaufbar</div>
+        <button class="buy-button" onclick="rankWarning()">
+            KAUFEN
+        </button>
+    </section>
+
+    <!-- TEAM -->
+    <section class="rank-card">
+        <div class="duration">So lange du im Team bist</div>
+        <h2>
+            <img src="logo.png" class="rank-logo" alt="Team Logo">
+            Team
+        </h2>
+        <div class="price">Nicht kaufbar</div>
+        <button class="buy-button" onclick="rankTeam()">
+            KAUFEN
+        </button>
+    </section>
+
+</div>
+
+<!-- VERGLEICHSTABELLE -->
+
+<div class="table-wrapper">
+<table>
+
+<thead>
+<tr>
+    <th colspan="9" style="text-align:left; padding:30px 25px;">
+        Rechte
+    </th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+    <td>Laufzeit</td>
+    <td>Lebenslang</td>
+    <td>So lange dein Boostest hält</td>
+    <td>So lange dein Boostest hält</td>
+    <td>So lange dein Boostest hält</td>
+    <td>Sollange du den Rank hast</td>
+    <td>Sollange du den Rank hast</td>
+    <td>Sollange wie du Freund Bist</td>
+    <td>So lange du im Team bist</td>
+</tr>
+
+<tr>
+    <td>Prefix</td>
+    <td class="mitglied-text">Mitglid</td>
+    <td class="booster-text">Booster</td>
+    <td class="premium-text">Premium</td>
+    <td class="premiumplus-text">Premium+</td>
+    <td class="vip-text">VIP</td>
+    <td class="vipplus-text">VIP+</td>
+    <td class="freunde-text">Freunde</td>
+    <td class="team-text">Team</td>
+</tr>
+
+<tr>
+    <td>
+        Eigenden Rank
+        <span class="info" tabindex="0">
+            ?
+            <span class="tooltip">
+                Du kanst die Farbe am Prefix zu Blau z.B Endern
+            </span>
+        </span>
+    </td>
+
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+</tr>
+
+<tr>
+    <td>
+        Prefix Endern
+        <span class="info" tabindex="0">
+            ?
+            <span class="tooltip">
+                Du knast die Farbe am Prefix zu Blau z.B Endern
+            </span>
+        </span>
+    </td>
+
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+</tr>
+
+<tr>
+    <td>
+        /ban-anfrage
+        <span class="info" tabindex="0">
+            ?
+            <span class="tooltip">
+                Benutze /ban-anfrage < user > um dem Team bescheid zu geben das der user geband werden soll weil er z.B spamt. Das erspart dir ein Ticket zu machen und geht
+            </span>
+        </span>
+    </td>
+
+    <td><span class="status no">×</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status no">×</span></td>
+</tr>
+
+<tr>
+    <td>
+        /nick
+        </span>
+    </td>
+
+    <td><span class="status no">×</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+</tr>
+
+<tr>
+    <td>
+        /gift
+        <span class="info" tabindex="0">
+            ?
+            <span class="tooltip">
+                Du kanst jede Woche einem user den Premium rank schenken
+            </span>
+        </span>
+    </td>
+
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status no">×</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+</tr>
+
+<tr>
+    <td>
+        Premium Talk
+    </td>
+
+    <td><span class="status no">×</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+</tr>
+
+<tr>
+    <td>
+        Premium Chat
+    </td>
+
+    <td><span class="status no">×</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+    <td><span class="status yes">✓</span></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</main>
+
+<!-- HINWEISFENSTER FÜR KAUFEN -->
+
+<div class="notice-overlay" id="noticeOverlay"
+     onclick="closeNoticeOutside(event)">
+
+    <div class="notice-box" role="dialog"
+         aria-modal="true" aria-labelledby="noticeTitle">
+
+        <h3 id="noticeTitle">ℹ️ Info</h3>
+
+        <p id="noticeText"></p>
+
+        <button class="close-button" onclick="closeNotice()">
+            Verstanden
+        </button>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Gaming Community | Gemeinsam spielen, gemeinsam Spaß haben.
+</footer>
+
+<script>
+function showNotice(amount) {
+    const message = amount === 1
+        ? "Um diesen Rang zu erhalten, musst du unseren Spiele-Server 1 Mal boosten."
+        : "Um diesen Rang zu erhalten, musst du unseren Spiele-Server " + amount + " Mal boosten.";
+
+    document.getElementById("noticeText").textContent = message;
+    document.getElementById("noticeOverlay").classList.add("show");
+}
+
+function rankWarning() {
+    document.getElementById("noticeText").textContent =
+        "Info: Dieser Rang kann nicht gekauft oder erworben werden, sondern nur vergeben werden.";
+
+    document.getElementById("noticeOverlay").classList.add("show");
+}
+
+<!----ww-->
+function rankst() {
+    document.getElementById("noticeText").textContent =
+        "Info: Dieser Rank kan nicht gekauft werden, da der rank der Standart  Rank ist!";
+
+    document.getElementById("noticeOverlay").classList.add("show");
+}
+
+function rankTeam() {
+    document.getElementById("noticeText").textContent =
+        "Achtung: Diesen Rank kanst du nur erhalten wen du auf Spiele Server dich als Teamler beweirbst!";
+
+    document.getElementById("noticeOverlay").classList.add("show");
+}
+
+function closeNotice() {
+    document.getElementById("noticeOverlay").classList.remove("show");
+}
+
+function closeNoticeOutside(event) {
+    if (event.target.id === "noticeOverlay") {
+        closeNotice();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeNotice();
+    }
+});
+</script>
+
+</body>
+</html>
