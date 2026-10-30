@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiele Server | News</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #8b0000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* LOGO-BEREICH */
+.logo-header {
+    background: #8b0000;
+    height: 203px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #a00000;
+}
+
+.logo-header img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* NAVIGATION */
+nav {
+    background: #350000;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 15px;
+    border-bottom: 2px solid #8b0000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ff3333;
+}
+
+/* NEWS-BEREICH */
+.container {
+    max-width: 950px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h1 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.heading p {
+    color: #eeeeee;
+    font-size: 16px;
+}
+
+.news-card {
+    background: #350000;
+    border: 1px solid #a00000;
+    border-left: 5px solid #ff2222;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.news-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.category {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: #650000;
+    color: #ff7777;
+    border: 1px solid #ff2222;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.category.update {
+    background: #665000;
+    color: #ffe17a;
+    border-color: #b99a20;
+}
+
+.category.eröffnung {
+    background: #105020;
+    color: #75ff91;
+    border-color: #26a344;
+}
+
+.news-date {
+    color: #dddddd;
+    font-size: 13px;
+}
+
+.news-card h2 {
+    color: #ff5555;
+    font-size: 23px;
+    margin-bottom: 14px;
+}
+
+.news-card p {
+    color: #eeeeee;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.news-footer {
+    border-top: 1px solid #700000;
+    margin-top: 22px;
+    padding-top: 15px;
+    color: #cccccc;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #eeeeee;
+    border-top: 1px solid #a00000;
+    margin-top: 50px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .logo-header {
+        height: 170px;
+    }
+
+    .logo-header img {
+        width: 125px;
+        height: 125px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .heading h1 {
+        font-size: 29px;
+    }
+
+    .news-card {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO -->
+<header class="logo-header">
+    <img src="logo.png" alt="Spiele Server Logo">
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Start</a>
+    <a href="links.html">Links</a>
+    <a href="spiele.html">Spiele</a>
+    <a href="ränke.html">Ränge</a>
+    <a href="infos.html" class="active">News</a>
+</nav>
+
+<!-- NEWS UND UPDATES -->
+<div class="container">
+
+    <div class="heading">
+        <h1>📢 News & Updates</h1>
+        <p>Hier findest du alle Neuigkeiten, Updates und Ankündigungen unserer Community.</p>
+    </div>
+
+    <!-- NEUESTE NEWS IMMER OBEN EINFÜGEN -->
+
+    <div class="news-card">
+        <div class="news-top">
+            <span class="category update">UPDATE</span>
+            <span class="news-date">30.10.2026</span>
+        </div>
+
+        <h2>🆕 Neues Update für den Spiele Server</h2>
+
+        <p>
+            Es wurde der Euro Truck Simulator hinzugefügt worüger ihr euch nun ausdauschen könnt. klicke <a href="et.html">Hier</a> um weitere infos zu erfahren
+        </p>
+
+        <div class="news-footer">
+            Gaming Community | Update
+        </div>
+    </div>
+
+    <div class="news-card">
+        <div class="news-top">
+            <span class="category eröffnung">ERÖFFNUNG</span>
+            <span class="news-date">30.10.2026</span>
+        </div>
+
+        <h2>DER DISCORD SERVER WURDE ERÖFFNET!</h2>
+
+        <p>
+            Der Discord Server Spiele Server hat eröffnet
+        </p>
+
+        <div class="news-footer">
+            Gaming Community | Discord-News
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Gaming Community | Gemeinsam spielen, gemeinsam Spaß haben.
+</footer>
+
+</body>
+</html>
