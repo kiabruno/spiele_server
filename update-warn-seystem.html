@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiele Server | Warnsystem</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #8b0000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* LOGO */
+.logo-header {
+    background: #8b0000;
+    height: 203px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #a00000;
+}
+
+.logo-header img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* NAVIGATION */
+nav {
+    background: #350000;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 15px;
+    border-bottom: 2px solid #8b0000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #ff3333;
+}
+
+/* HAUPTBEREICH */
+.container {
+    max-width: 1000px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.heading h1 {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.heading p {
+    color: #eee;
+    font-size: 17px;
+}
+
+/* INFO-KARTEN */
+.info-card {
+    background: #350000;
+    border: 1px solid #a00000;
+    border-left: 5px solid #ff2222;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h2 {
+    color: #ff5555;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #eee;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.warning-label {
+    display: inline-block;
+    background: #650000;
+    color: #ff7777;
+    border: 1px solid #ff2222;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* WARNSTUFEN */
+.warning-level {
+    background: #4a0000;
+    border: 1px solid #a00000;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.warning-level h3 {
+    color: #ff7777;
+    margin-bottom: 8px;
+}
+
+.warning-level p {
+    font-size: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #eee;
+    border-top: 1px solid #a00000;
+    margin-top: 50px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .logo-header {
+        height: 170px;
+    }
+
+    .logo-header img {
+        width: 125px;
+        height: 125px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .heading h1 {
+        font-size: 29px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO -->
+<header class="logo-header">
+    <img src="logo.png" alt="Spiele Server Logo">
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Start</a>
+    <a href="links.html">Links</a>
+    <a href="spiele.html">Spiele</a>
+    <a href="ranks.html">Ränge</a>
+    <a href="infos.html"class="active">Infos</a>
+</nav>
+
+<!-- INHALT -->
+<div class="container">
+
+    <div class="heading">
+        <h1>⚠️ Sicherheits-Bot Warnsystem</h1>
+        <p>Alle Informationen zum neuen Warnsystem unserer Community.</p>
+    </div>
+
+    <div class="info-card">
+        <div class="warning-label">● NEUES SYSTEM</div>
+
+        <h2>🛡️ Was ist das Warnsystem?</h2>
+
+        <p>
+            Unser Sicherheits-Bot hat ein neues Warnsystem bekommen!
+            <br><br>
+            Dieses System soll dabei helfen, unsere Regeln auf
+            dem Discord-Server einzuhalten.
+            <br><br>
+            Wenn ein Mitglied gegen unsere Serverregeln verstößt,
+            kann es vom Sicherheits-Bot eine Warnung erhalten.
+            So werden Regelverstöße erkannt und die Community
+            bleibt ein angenehmer Ort für alle.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h2>⚠️ Wann bekommt man eine Warnung?</h2>
+
+        <p>
+            Eine Warnung kann beispielsweise vergeben werden, wenn
+            ein Mitglied gegen unsere Discord-Regeln verstößt.
+        </p>
+
+        <div class="warning-level">
+            <h3>💬 Spam und Nachrichtenflut</h3>
+            <p>
+                Wenn jemand wiederholt Nachrichten spammt,
+                unnötig viele Nachrichten sendet oder Chats stört.
+            </p>
+        </div>
+
+        <div class="warning-level">
+            <h3>🤬 Beleidigungen und Respektlosigkeit</h3>
+            <p>
+                Wenn Mitglieder andere Personen beleidigen,
+                provozieren oder respektlos behandeln.
+            </p>
+        </div>
+
+        <div class="warning-level">
+            <h3>📢 Unerlaubte Werbung</h3>
+            <p>
+                Wenn jemand ohne Erlaubnis Werbung für andere
+                Server, Webseiten oder Angebote macht.
+            </p>
+        </div>
+
+        <div class="warning-level">
+            <h3>🚫 Missachtung der Serverregeln</h3>
+            <p>
+                Wenn jemand absichtlich gegen die festgelegten
+                Regeln unserer Community verstößt.
+            </p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>📋 Was passiert nach einer Warnung?</h2>
+
+        <p>
+            Eine Warnung ist ein Hinweis darauf, dass ein
+            Mitglied gegen eine Regel verstoßen hat.
+            <br><br>
+            Bei weiteren Regelverstößen können zusätzliche
+            Maßnahmen durch das Serverteam folgen.
+            Welche Maßnahme ergriffen wird, hängt vom
+            jeweiligen Verstoß und dessen Schwere ab.
+            <br><br>
+            Das Serverteam kann jeden Fall überprüfen.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h2>🤝 Unser Ziel</h2>
+
+        <p>
+            Unser Ziel ist eine freundliche und faire Community,
+            in der sich alle Mitglieder wohlfühlen können.
+            <br><br>
+            Das Warnsystem soll helfen, unsere Regeln
+            durchzusetzen und Streit sowie unnötige Probleme
+            zu vermeiden.
+            <br><br>
+            Behandelt andere Mitglieder so, wie ihr selbst
+            behandelt werden möchtet!
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Gaming Community | Gemeinsam spielen, gemeinsam Spaß haben.
+</footer>
+
+</body>
+</html>
