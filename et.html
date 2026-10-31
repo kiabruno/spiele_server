@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiele Server | Euro Truck Simulator 2</title>
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #8b0000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* LOGO */
+.logo-header {
+    background: #8b0000;
+    height: 203px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #a00000;
+}
+
+.logo-header img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* NAVIGATION */
+nav {
+    background: #350000;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 15px;
+    border-bottom: 2px solid #8b0000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #ff3333;
+}
+
+/* HAUPTBEREICH */
+.container {
+    max-width: 1000px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.heading h1 {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.heading p {
+    color: #eee;
+    font-size: 17px;
+}
+
+/* KARTEN */
+.info-card {
+    background: #350000;
+    border: 1px solid #a00000;
+    border-left: 5px solid #ff2222;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h2 {
+    color: #ff5555;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #eee;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.game-icon {
+    text-align: center;
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+/* KAUFBUTTON */
+.buy-container {
+    text-align: center;
+    padding: 35px 20px;
+    background: #350000;
+    border: 1px solid #a00000;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.buy-container h2 {
+    color: #ff5555;
+    margin-bottom: 15px;
+}
+
+.buy-container p {
+    color: #eee;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: #b00000;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.buy-button:hover {
+    background: #e00000;
+    transform: scale(1.05);
+}
+
+/* DISCORD */
+.discord-info {
+    background: #350000;
+    border: 1px solid #a00000;
+    border-left: 5px solid #ff2222;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+.discord-info h2 {
+    color: #ff5555;
+    margin-bottom: 15px;
+}
+
+.discord-info p {
+    color: #eee;
+    line-height: 1.8;
+}
+
+.new-label {
+    display: inline-block;
+    background: #105020;
+    color: #75ff91;
+    border: 1px solid #26a344;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #eee;
+    border-top: 1px solid #a00000;
+    margin-top: 50px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .logo-header {
+        height: 170px;
+    }
+
+    .logo-header img {
+        width: 125px;
+        height: 125px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .heading h1 {
+        font-size: 29px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO -->
+<header class="logo-header">
+    <img src="logo.png" alt="Spiele Server Logo">
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Start</a>
+    <a href="links.html">Links</a>
+    <a href="spiele.html">Spiele</a>
+    <a href="ranks.html">Ränge</a>
+    <a href="infos.html">Infos</a>
+</nav>
+
+<!-- INHALT -->
+<div class="container">
+
+    <div class="heading">
+        <h1>🚛 Euro Truck Simulator 2</h1>
+        <p>Erkunde Europa hinter dem Steuer deines eigenen LKW!</p>
+    </div>
+
+    <div class="info-card">
+        <div class="game-icon">🚛</div>
+
+        <h2>Was ist Euro Truck Simulator 2?</h2>
+
+        <p>
+            Euro Truck Simulator 2 ist eine LKW-Simulation,
+            in der du selbst zum Trucker wirst.
+            <br><br>
+            Deine Aufgabe ist es, verschiedene Waren mit deinem
+            LKW durch Europa zu transportieren und sicher an
+            ihren Zielorten abzuliefern.
+            <br><br>
+            Du kannst unterschiedliche LKW fahren, neue Städte
+            entdecken, deine Fahrzeuge anpassen und dein eigenes
+            Transportunternehmen aufbauen.
+            <br><br>
+            Dabei erwarten dich viele Straßen, Länder und
+            abwechslungsreiche Lieferaufträge.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h2>🌍 Was erwartet dich im Spiel?</h2>
+
+        <p>
+            🚛 Verschiedene LKW und Fahrzeugmarken
+            <br>
+            📦 Unterschiedliche Lieferungen und Aufträge
+            <br>
+            🌍 Viele Städte und Länder Europas
+            <br>
+            🛣️ Große Straßen- und Autobahnnetze
+            <br>
+            🔧 Eigene LKW gestalten und verbessern
+            <br>
+            🏢 Ein eigenes Transportunternehmen aufbauen
+        </p>
+    </div>
+
+    <div class="buy-container">
+        <h2>🛒 Euro Truck Simulator 2 kaufen</h2>
+
+        <p>
+            Du möchtest selbst Trucker werden und Europa
+            erkunden?
+            <br>
+            Dann hol dir jetzt Euro Truck Simulator 2!
+        </p>
+
+        <a class="buy-button"
+           href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Jetzt auf Steam kaufen
+        </a>
+    </div>
+
+    <div class="discord-info">
+        <span class="new-label">● NEU AUF UNSEREM DISCORD</span>
+
+        <h2>💬 Jetzt auch in unserer Community!</h2>
+
+        <p>
+            Euro Truck Simulator 2 ist neu auf unserem
+            Discord-Server hinzugekommen!
+            <br><br>
+            Ab sofort kannst du das Spiel auf unserem
+            Discord auswählen und zeigen, dass du
+            Euro Truck Simulator 2 spielst.
+            <br><br>
+            Wir freuen uns auf alle Trucker in unserer Community!
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Gaming Community | Gemeinsam spielen, gemeinsam Spaß haben.
+</footer>
+
+</body>
+</html>
