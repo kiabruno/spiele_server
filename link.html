@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiele Server | Seite verschoben</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #8b0000;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.logo-header {
+    background: #8b0000;
+    height: 203px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #a00000;
+}
+
+.logo-header img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+nav {
+    background: #350000;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 15px;
+    border-bottom: 2px solid #8b0000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff3333;
+}
+
+.container {
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.notice-box {
+    max-width: 600px;
+    width: 100%;
+    padding: 45px 30px;
+    background: #350000;
+    border: 1px solid #ff2222;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ff5555;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #eee;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.new-link {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #b00000;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.new-link:hover {
+    background: #e00000;
+    transform: scale(1.04);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #eee;
+    border-top: 1px solid #a00000;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .logo-header {
+        height: 170px;
+    }
+
+    .logo-header img {
+        width: 125px;
+        height: 125px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="logo-header">
+    <img src="logo.png" alt="Spiele Server Logo">
+</header>
+
+<nav>
+    <a href="index.html">Start</a>
+    <a href="links.html" class="active">Links</a>
+    <a href="spiele.html">Spiele</a>
+    <a href="ränke.html">Ränge</a>
+    <a href="infos.html">News</a>
+    </nav>
+
+<div class="container">
+
+    <div class="notice-box">
+
+        <div class="icon">📄</div>
+
+        <h1>Diese Seite wurde verschoben!</h1>
+
+        <p>
+            Unsere alte Links-Seite wurde umbenannt.
+            <br><br>
+            Du findest alle unsere Links ab sofort auf unserer neuen Seite.
+            <br><br>
+            Klicke einfach auf den Button, um zur neuen Seite zu gelangen!
+        </p>
+
+        <a href="links.html" class="new-link">
+            Zur neuen Links-Seite
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Gaming Community | Gemeinsam spielen, gemeinsam Spaß haben.
+</footer>
+
+</body>
+</html>
